@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>test</title>
+</head>
+<body>
+<style>
+/* Remove default margins */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Full-screen video background */
+.bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; /* Keeps video behind everything */
+  object-fit: cover; /* Prevents stretching */
+  background-size: cover;
+}
+
+/* Content overlay container */
+.content {
+  position: relative;
+  z-index: 1; /* Higher than the video */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+</style>
+<!-- The video background -->
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="data:video/mp4;base64,YOUR_BASE64_STRING_HERE" type="video/mp4">
+</video>
+
+<!-- The content layer -->
+<main class="content">
+  <h1>Your Title Here</h1>
+  <p>All your text and buttons go in this container.</p>
+</main>
+</body>
+</html>
